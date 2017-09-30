@@ -33,16 +33,14 @@ public class EmployeeRegistrationController implements AppConstants {
 		
 	}
 	
-	@RequestMapping(value="/saveEmployee",method=RequestMethod.POST)
+	@RequestMapping(value=SAVEEMPLOYEE,method=RequestMethod.POST)
 	public String saveEmployee(@ModelAttribute("employee") @Validated Employee employee,Model model, BindingResult result){
 		employeeValidator.validate(employee, result);
 		 if (result.hasErrors()) {
 	            return "registration";
 	        }
-		
 		employeeService.saveEmployee(employee);
-		return "register";
-		
+		return "login";
 	}
 	
 }

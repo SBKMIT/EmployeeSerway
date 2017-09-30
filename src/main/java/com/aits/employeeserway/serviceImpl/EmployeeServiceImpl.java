@@ -20,4 +20,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		return employeeDAO.saveEmployee(employee);
 	}
+
+	public int loginCheck(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeDAO.loginCheck(employee);
+	}
+
+	public Employee getEmployee(int employeeID) {
+		// TODO Auto-generated method stub
+		return employeeDAO.getEmployee(employeeID);
+	}
 }
