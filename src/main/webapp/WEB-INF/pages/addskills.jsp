@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,12 +45,12 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Dashboard"><a class="nav-link" href="addEmployee"> <i
+				title="Dashboard"><a class="nav-link" href="index.html"> <i
 					class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Add
 						Employee</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Charts"><a class="nav-link" href="addSkills"> <i
+				title="Charts"><a class="nav-link" href="charts.html"> <i
 					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Add
 						Skills</span>
 			</a></li>
@@ -70,8 +73,50 @@
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-8"></div>
+				<div class="col-lg-12">
+
+					<div class="card card-login mx-auto mt-5">
+						
+						<div class="card-header">Enter Skill</div>
+						<div class="card-body">
+
+							<form:form action="saveSkill" modelAttribute="skillMaster"
+								method="post">
+
+								<div class="form-group">
+									<label for="exampleInputEmail1">Skill</label>
+									<form:input path="skill" class="form-control"
+										id="exampleInputEmail1" aria-describedby="emailHelp"
+										placeholder="Enter skill" />
+									<form:errors path="skill" cssClass="error" />
+
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Description</label>
+								
+									<form:textarea path="description" class="form-control"
+										placeholder="Description" />
+
+									<form:errors path="description" cssClass="error" />
+
+								</div>
+
+								<form:button type="submit" class="btn btn-primary btn-block">
+						SAVE
+					</form:button>
+
+
+							</form:form>
+						</div>
+					</div>
+
+
+				</div>
 			</div>
+
+
+			
+
 			<footer class="sticky-footer">
 			<div class="container">
 				<div class="text-center">
@@ -133,5 +178,6 @@
 				src="${pageContext.request.contextPath}/resources/js/sb-admin-charts.min.js"></script>
 		</div>
 	</div>
+
 </body>
 </html>

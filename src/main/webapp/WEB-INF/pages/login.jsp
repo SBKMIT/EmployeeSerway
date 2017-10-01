@@ -29,6 +29,8 @@
 <body class="bg-dark">
 	<div class="container">
 		<div class="card card-login mx-auto mt-5">
+		    <center><img alt="" src="${pageContext.request.contextPath}/resources/images/automatic-infotech.png" height="30" width="100">
+		    </center>
 			<div class="card-header">Employee Login</div>
 			<div class="card-body">
 
@@ -66,8 +68,8 @@
 
 				</form:form>
 				<div class="text-center">
-					<a class="d-block small mt-3" href="register">Register an
-						Account</a> <a class="d-block small" href="forgot-password.html">Forgot
+					<!-- <a class="d-block small mt-3" href="register">Register an
+						Account</a> --> <a class="d-block small" href="forgot-password.html">Forgot
 						Password?</a>
 				</div>
 			</div>

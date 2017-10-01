@@ -8,8 +8,13 @@ public interface AppConstants {
 	String SAVEEMPLOYEE="/saveEmployee";
 
 	String LOGINEMPLOYEE="/loginEmployee";
+	String LOGOUT="logout";
 	
 	String HRHOME="HRHome";
 	String MANAGEMENTHOME="ManagementHome";
 	String EMPLOYEEHOME="EmployeeHome";
+	String ADDEMPLOYEE="addEmployee";
+	
+	
+	String ADDSKILLS="addSkills";
 }

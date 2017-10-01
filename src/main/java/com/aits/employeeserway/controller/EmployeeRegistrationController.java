@@ -19,7 +19,7 @@ import com.aits.employeeserway.validators.EmployeeValidator;
 public class EmployeeRegistrationController implements AppConstants {
 
 	
-	@Autowired
+	/*@Autowired
 	private EmployeeService employeeService;
 	
 	@Autowired(required=true)
@@ -32,8 +32,8 @@ public class EmployeeRegistrationController implements AppConstants {
 		return "registration";
 		
 	}
-	
-	@RequestMapping(value=SAVEEMPLOYEE,method=RequestMethod.POST)
+	*/
+	/*@RequestMapping(value=SAVEEMPLOYEE,method=RequestMethod.POST)
 	public String saveEmployee(@ModelAttribute("employee") @Validated Employee employee,Model model, BindingResult result){
 		employeeValidator.validate(employee, result);
 		 if (result.hasErrors()) {
@@ -42,5 +42,5 @@ public class EmployeeRegistrationController implements AppConstants {
 		employeeService.saveEmployee(employee);
 		return "login";
 	}
-	
+	*/
 }

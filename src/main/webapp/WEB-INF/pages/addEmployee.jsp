@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,12 +45,12 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Dashboard"><a class="nav-link" href="addEmployee"> <i
+				title="Dashboard"><a class="nav-link" href="index.html"> <i
 					class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Add
 						Employee</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Charts"><a class="nav-link" href="addSkills"> <i
+				title="Charts"><a class="nav-link" href="charts.html"> <i
 					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Add
 						Skills</span>
 			</a></li>
@@ -70,8 +73,117 @@
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-8"></div>
+				<div class="col-lg-12">
+
+					<div class="card card-register mx-auto mt-5">
+						<div class="card-header">Register an Employee</div>
+						<div class="card-body">
+							<form:form action="saveEmployee" modelAttribute="employee"
+								method="post">
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="exampleInputName">First name</label>
+
+											<form:input path="firstName" class="form-control"
+												id="exampleInputName" aria-describedby="nameHelp"
+												placeholder="Enter first name" />
+											<form:errors path="firstName" cssClass="error" />
+
+										</div>
+										<div class="col-md-6">
+											<label for="exampleInputLastName">Last name</label>
+											<form:input path="lastName" class="form-control"
+												id="exampleInputLastName" taria-describedby="nameHelp"
+												placeholder="Enter last name" />
+											<form:errors path="lastName" cssClass="error" />
+
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Email address</label>
+									<form:input path="emailID" class="form-control"
+										id="exampleInputEmail1" aria-describedby="emailHelp"
+										placeholder="Enter email" />
+									<form:errors path="emailID" cssClass="error" />
+
+								</div>
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="exampleInputLastName">Login ID</label>
+											<form:input path="loginID" class="form-control"
+												id="exampleInputLastName" taria-describedby="nameHelp"
+												placeholder="Enter Login ID" />
+
+											<form:errors path="loginID" cssClass="error" />
+
+										</div>
+
+										<div class="col-md-6">
+											<label for="exampleInputPassword1">Password</label>
+											<form:input path="password" class="form-control"
+												id="exampleInputPassword1" type="password"
+												placeholder="Password" />
+
+											<form:errors path="password" cssClass="error" />
+
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="exampleInputPassword1">Designation</label>
+											<form:select path="designation" class="form-control">
+												<form:option value="">Select Designation</form:option>
+												<form:option value="HR">HR</form:option>
+												<form:option value="Management">Management</form:option>
+												<form:option value="Software Developer">Software Developer</form:option>
+											</form:select>
+											<form:errors path="designation" cssClass="error" />
+
+										</div>
+										<div class="col-md-6">
+											<label for="exampleInputPassword1">Department</label>
+											<form:select path="department.departmentID"
+												class="form-control">
+												<form:option value="0">Select Department</form:option>
+												<form:option value="1">SAP</form:option>
+												<form:option value="2">JAVA</form:option>
+												<form:option value="3">.NET</form:option>
+												<form:option value="4">HR</form:option>
+												<form:option value="5">ABAP</form:option>
+											</form:select>
+											<form:errors path="department.departmentID" cssClass="error" />
+
+										</div>
+
+									</div>
+								</div>
+
+
+								<form:button type="submit" class="btn btn-primary btn-block">
+						Register
+					</form:button>
+							</form:form>
+							<div class="text-center">
+								<a class="d-block small mt-3" href="login">Login Page</a> <a
+									class="d-block small" href="forgot-password.html">Forgot
+									Password?</a>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
 			</div>
+
+
+<hr>
+
 			<footer class="sticky-footer">
 			<div class="container">
 				<div class="text-center">
@@ -133,5 +245,6 @@
 				src="${pageContext.request.contextPath}/resources/js/sb-admin-charts.min.js"></script>
 		</div>
 	</div>
+
 </body>
 </html>

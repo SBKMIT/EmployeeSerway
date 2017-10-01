@@ -41,13 +41,13 @@ public class LoginController implements AppConstants{
 	@RequestMapping(value=LOGINEMPLOYEE,method=RequestMethod.POST)
 	public String loginCheck(@ModelAttribute("employee") @Validated Employee employee,Model model,BindingResult result){
 		System.out.println("Hiii"+employee.getLoginID());
-		
-						
+
+
 		loginValidator.validate(employee, result);
 		if (result.hasErrors()) {
-		  return "login";
+			return "login";
 		}
-	
+
 		int employeeID=employeeService.loginCheck(employee);
 		System.out.println("Hiii"+employeeID);
 		if(employeeID==0){
@@ -59,15 +59,13 @@ public class LoginController implements AppConstants{
 		System.out.println("Hiii");
 		Employee employeeType=employeeService.getEmployee(employeeID);
 
-		if(employeeType.getDesignation()=="HR"){
+		if(employeeType.getDesignation().equals("HR")){
 			return"HRHome";
 
-		}else if(employeeType.getDesignation()=="Management"){
+		}else if(employeeType.getDesignation().equals("Management")){
 			return"ManagementHome";
-
 		}else{
 			return"EmployeeHome";
-
 		}
 
 	}

@@ -29,7 +29,7 @@ public class Employee {
 	private String lastName;
 
 	
-	@Column(name="emailID",length=30,unique=true)
+	@Column(name="emailID",length=70,unique=true)
 	private String emailID;
 
 	@Column(name="designation",length=30)
