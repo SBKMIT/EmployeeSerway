@@ -14,6 +14,7 @@ import com.aits.employeeserway.model.Employee;
 import com.aits.employeeserway.model.SkillMaster;
 import com.aits.employeeserway.service.EmployeeService;
 import com.aits.employeeserway.validators.EmployeeValidator;
+import com.aits.employeeserway.validators.SkiilMasterValidator;
 
 
 @Controller
@@ -26,6 +27,9 @@ public class HRController implements AppConstants {
 	@Autowired(required=true)
 	private EmployeeValidator employeeValidator;
 
+	@Autowired(required=true)
+	private SkiilMasterValidator skillMasterValidator;
+	
 
 	@RequestMapping(value=HRHOME,method=RequestMethod.GET)
 	public String HRHomePage(Model model){
@@ -59,6 +63,15 @@ public class HRController implements AppConstants {
 	
 		return"addskills";
 	}	
-
+@RequestMapping(value=SAVESKILL,method=RequestMethod.POST)
+public String saveSkill(@ModelAttribute("SkillMaster") @Validated SkillMaster skillMaster,Model model,BindingResult result){
+	skillMasterValidator.validate(skillMaster, result);
+	if(result.hasErrors()){
+		
+		return"addskills";
+	}
+	
+	return"HRHome";
+}
 
 }

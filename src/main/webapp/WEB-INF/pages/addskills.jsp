@@ -95,7 +95,7 @@
 									<label for="exampleInputPassword1">Description</label>
 								
 									<form:textarea path="description" class="form-control"
-										placeholder="Description" />
+										placeholder="Enter Description" />
 
 									<form:errors path="description" cssClass="error" />
 

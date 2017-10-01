@@ -17,4 +17,5 @@ public interface AppConstants {
 	
 	
 	String ADDSKILLS="addSkills";
+	String SAVESKILL="saveSkill";
 }
