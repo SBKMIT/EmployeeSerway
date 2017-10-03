@@ -18,4 +18,6 @@ public interface AppConstants {
 	
 	String ADDSKILLS="addSkills";
 	String SAVESKILL="saveSkill";
+	String REGISTERHR="RegisterHR";
+	
 }

@@ -56,7 +56,7 @@ public class LoginController implements AppConstants{
 			return"login";
 		}
 
-		System.out.println("Hiii");
+	
 		Employee employeeType=employeeService.getEmployee(employeeID);
 
 		if(employeeType.getDesignation().equals("HR")){

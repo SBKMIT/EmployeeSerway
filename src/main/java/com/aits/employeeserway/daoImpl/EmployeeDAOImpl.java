@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.aits.employeeserway.dao.EmployeeDAO;
 import com.aits.employeeserway.model.Employee;
+import com.aits.employeeserway.model.SkillMaster;
 
 @Repository("EmployeeDAO")
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -63,5 +64,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		transaction.commit();
 		
 		return employee;
+	}
+
+	@Override
+	public void saveSkill(SkillMaster skillMaster) {
+		// TODO Auto-generated method stub
+		
+		
+		Session session=sessionFactory.openSession();
+		Transaction transaction=session.beginTransaction();
+		session.save(skillMaster);
+		transaction.commit();
+		
+		
 	}}
 

@@ -64,13 +64,14 @@ public class HRController implements AppConstants {
 		return"addskills";
 	}	
 @RequestMapping(value=SAVESKILL,method=RequestMethod.POST)
-public String saveSkill(@ModelAttribute("SkillMaster") @Validated SkillMaster skillMaster,Model model,BindingResult result){
+public String saveSkill(@ModelAttribute("skillMaster") @Validated SkillMaster skillMaster,Model model,BindingResult result){
 	skillMasterValidator.validate(skillMaster, result);
 	if(result.hasErrors()){
 		
 		return"addskills";
 	}
 	
+	employeeService.saveSkill(skillMaster);
 	return"HRHome";
 }
 

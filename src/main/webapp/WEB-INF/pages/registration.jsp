@@ -30,7 +30,7 @@
 		<div class="card card-register mx-auto mt-5">
 			<div class="card-header">Register an Employee</div>
 			<div class="card-body">
-				<form:form action="saveEmployee" modelAttribute="employee"
+				<form:form action="RegisterHR" modelAttribute="employee"
 					method="post">
 					<div class="form-group">
 						<div class="form-row">
@@ -91,8 +91,6 @@
 								<form:select path="designation" class="form-control">
 									<form:option value="">Select Designation</form:option>
 									<form:option value="HR">HR</form:option>
-									<form:option value="Management">Management</form:option>
-									<form:option value="Software Developer">Software Developer</form:option>
 								</form:select>
 								<form:errors path="designation" cssClass="error" />
 								
@@ -101,11 +99,8 @@
 								<label for="exampleInputPassword1">Department</label>
 								<form:select path="department.departmentID" class="form-control">
 								    <form:option value="0">Select Department</form:option>
-									<form:option value="1">SAP</form:option>
-									<form:option value="2">JAVA</form:option>
-									<form:option value="3">.NET</form:option>
-									<form:option value="4">HR</form:option>
-									<form:option value="5">ABAP</form:option>
+									<form:option value="1">HR</form:option>
+									
 								</form:select>
 								<form:errors path="department.departmentID" cssClass="error" />
 								

@@ -45,17 +45,17 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Dashboard"><a class="nav-link" href="index.html"> <i
+				title="Dashboard"><a class="nav-link" href="addEmployee"> <i
 					class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">Add
 						Employee</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Charts"><a class="nav-link" href="charts.html"> <i
+				title="Charts"><a class="nav-link" href="addSkills"> <i
 					class="fa fa-fw fa-area-chart"></i> <span class="nav-link-text">Add
 						Skills</span>
 			</a></li>
 			<li class="nav-item" data-toggle="tooltip" data-placement="right"
-				title="Tables"><a class="nav-link" href="tables.html"> <i
+				title="Tables"><a class="nav-link" href="#"> <i
 					class="fa fa-fw fa-table"></i> <span class="nav-link-text">Start
 						360 Serwary</span>
 			</a></li>

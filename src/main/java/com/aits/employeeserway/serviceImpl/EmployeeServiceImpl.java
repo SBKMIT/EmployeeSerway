@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.aits.employeeserway.dao.EmployeeDAO;
 import com.aits.employeeserway.model.Employee;
+import com.aits.employeeserway.model.SkillMaster;
 import com.aits.employeeserway.service.EmployeeService;
 
 @Service("EmployeeService")
@@ -29,5 +30,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee getEmployee(int employeeID) {
 		// TODO Auto-generated method stub
 		return employeeDAO.getEmployee(employeeID);
+	}
+
+	@Override
+	public void saveSkill(SkillMaster skillMaster) {
+		// TODO Auto-generated method stub
+		employeeDAO.saveSkill(skillMaster);
 	}
 }
